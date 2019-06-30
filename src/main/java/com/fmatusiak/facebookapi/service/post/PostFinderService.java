@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class PostFinderService {
@@ -15,14 +14,14 @@ public class PostFinderService {
     @Autowired
     private FacebookBuildConfig facebookBuildConfig;
 
-    public List<Post> getPublicPostsListByName(String postsName) throws FacebookException {
+    public List<Post> getPublicPostsListByName(String postName) throws FacebookException {
         return facebookBuildConfig.getFacebookAuthorizeAndBuildInstance()
-                .searchPosts(postsName).stream().collect(Collectors.toList());
+                .searchPosts(postName);
     }
 
     public List<Post> getAllPublicPosts() throws FacebookException {
         return facebookBuildConfig.getFacebookAuthorizeAndBuildInstance()
-                .posts().getPosts().stream().collect(Collectors.toList());
+                .posts().getPosts();
     }
 
 }
