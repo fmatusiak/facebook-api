@@ -3,7 +3,6 @@ package com.fmatusiak.facebookapi.service.user;
 import com.fmatusiak.facebookapi.config.FacebookBuildConfig;
 import facebook4j.FacebookException;
 import facebook4j.User;
-import facebook4j.api.UserMethods;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +18,7 @@ public class UserFinderService {
         return facebookBuildConfig.getFacebookAuthorizeAndBuildInstance().searchUsers(usersName);
     }
 
-    public UserMethods getAllUsers() {
+    public List<User> getAllUsers() {
         return facebookBuildConfig.getFacebookAuthorizeAndBuildInstance().users();
     }
 

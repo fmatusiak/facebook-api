@@ -31,7 +31,7 @@ public class GroupFinderServiceTest {
     @Test
     public void testGetAllFacebookGroupsByContainName() throws FacebookException {
         //given & when
-        List<Group> groupList = groupFinderService.getAllFacebookGroupsByContainName("D");
+        List<Group> groupList = groupFinderService.getallGroupsByGroupName("D");
         //then
         for (Group group : groupList) {
             Assert.assertNotNull(group);
