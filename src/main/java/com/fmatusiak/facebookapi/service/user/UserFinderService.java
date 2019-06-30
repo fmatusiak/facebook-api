@@ -19,7 +19,7 @@ public class UserFinderService {
     }
 
     public List<User> getAllUsers() {
-        return facebookBuildConfig.getFacebookAuthorizeAndBuildInstance().users();
+        return (List<User>) facebookBuildConfig.getFacebookAuthorizeAndBuildInstance().users();
     }
 
 }

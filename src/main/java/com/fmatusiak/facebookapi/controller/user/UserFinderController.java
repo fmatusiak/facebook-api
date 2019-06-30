@@ -3,7 +3,6 @@ package com.fmatusiak.facebookapi.controller.user;
 import com.fmatusiak.facebookapi.service.user.UserFinderService;
 import facebook4j.FacebookException;
 import facebook4j.User;
-import facebook4j.api.UserMethods;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,7 +24,7 @@ public class UserFinderController {
     }
 
     @GetMapping(value = "users")
-    private UserMethods getAllUsers() {
+    private List<User> getAllUsers() {
         return userFinderService.getAllUsers();
     }
 
